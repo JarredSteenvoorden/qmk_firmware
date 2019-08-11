@@ -33,6 +33,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_ROWS 4
 #define MATRIX_COLS 12
 
+#define DEBOUNCE 5
+
 /* define if matrix has ghost */
 //#define MATRIX_HAS_GHOST
 

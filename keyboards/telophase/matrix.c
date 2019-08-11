@@ -17,6 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include <stdint.h>
 #include <stdbool.h>
+#include <string.h>
 #if defined(__AVR__)
 #include <avr/io.h>
 #endif
@@ -46,6 +47,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* matrix state(1:on, 0:off) */
 static matrix_row_t matrix[MATRIX_ROWS];
+static matrix_row_t matrix_debouncing[MATRIX_ROWS];
+static bool debouncing = false;
+static uint16_t debouncing_time = 0;
 
 __attribute__ ((weak))
 void matrix_init_quantum(void) {
@@ -86,6 +90,8 @@ uint8_t matrix_cols(void) {
 }
 
 void matrix_init(void) {
+    memset(matrix, 0, MATRIX_ROWS * sizeof(matrix_row_t));
+    memset(matrix_debouncing, 0, MATRIX_ROWS * sizeof(matrix_row_t));
 
     matrix_init_quantum();
 }
@@ -122,10 +128,22 @@ uint8_t matrix_scan(void)
     {
         //shifting and transferring the keystates to the QMK matrix variable
         for (uint8_t i = 0; i < MATRIX_ROWS; i++) {
-            matrix[i] = (uint16_t) uart_data[i*2] | (uint16_t) uart_data[i*2+1] << 5;
+            matrix_row_t data = (uint16_t) uart_data[i*2] | (uint16_t) uart_data[i*2+1] << 5;
+            
+            if (matrix_debouncing[i] != data) {
+                matrix_debouncing[i] = data;
+                debouncing = true;
+                debouncing_time = timer_read();
+            }
         }
     }
 
+    if (debouncing && timer_elapsed(debouncing_time) > DEBOUNCE) {
+        for (int row = 0; row < MATRIX_ROWS; row++) {
+            matrix[row] = matrix_debouncing[row];
+        }
+        debouncing = false;
+    }
 
     matrix_scan_quantum();
     return 1;
