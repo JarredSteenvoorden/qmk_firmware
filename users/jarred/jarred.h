@@ -58,7 +58,7 @@ enum {
 #define QWERTY_L0   KC_ESC ,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5
 #define QWERTY_L1   KC_TAB,     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T
 #define QWERTY_L2   NAVI,       KC_A,    KC_S,    KC_D,    KC_F,    KC_G
-#define QWERTY_L3   KC_LSFT,   WIN_Z,    KC_X,    KC_C,    KC_V,    KC_B
+#define QWERTY_L3   KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B
 #define QWERTY_L4   KC_LCTL, KC_LGUI,  NUMPAD, KC_LALT,   LOWER,  KC_SPC
 
 #define QWERTY_R0                                                           KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSPC
