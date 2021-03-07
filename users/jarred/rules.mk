@@ -10,7 +10,14 @@ ifneq (,$(findstring planck,$(KEYBOARD)))
     BACKLIGHT_BREATHING = no
   endif
   
+  CONSOLE_ENABLE = no
   AUDIO_ENABLE = yes
 endif
 
+ifeq ($(strip $(KEYBOARD)), qaz)
+COMBO_ENABLE = yes
+BOOTLOADER = atmel-dfu
+endif
+
+COMBO_ENABLE = yes
 MOUSEKEY_ENABLE = no

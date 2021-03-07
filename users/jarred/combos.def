@@ -1,0 +1,35 @@
+// Escape and Tab
+COMB(esc, KC_ESC, KC_W, KC_E)
+COMB(tab, KC_TAB, KC_S, KC_D)
+
+// Symbols
+COMB(mins, KC_MINS, KC_E, KC_R)
+COMB(eql, KC_EQL, KC_D, KC_F)
+COMB(quot, KC_QUOT, KC_K, KC_L)
+COMB(scln, KC_SCLN, KC_J, KC_K)
+COMB(slsh, KC_SLSH, KC_I, KC_O)
+COMB(bsls, KC_BSLS, KC_U, KC_I)
+
+// One shot CTRL, ALT, GUI
+COMB(osm_lgui, OSM(MOD_LGUI), KC_W, KC_R)     // Requires PR #8591
+COMB(osm_lctrl, OSM(MOD_LCTL), KC_S, KC_F)    // Requires PR #8591
+COMB(osm_ralt, OSM(MOD_RALT), KC_U, KC_O)     // Requires PR #8591
+COMB(osm_rctrl, OSM(MOD_RCTL), KC_J, KC_L)    // Requires PR #8591
+
+// Layer toggle Nav, Numbers, Symbols
+COMB(lnum, MO(_LW), KC_S, LT(_LW,KC_SPACE))                    // Requires PR #8591
+COMB(lsym, MO(_GAME), LSFT_T(KC_Z), LT(_LW,KC_SPACE))          // Requires PR #8591
+
+COMB(rnum, MO(_LW), KC_L, LT(_LW,KC_ENT))                      // Requires PR #8591
+COMB(rsym, MO(_GAME), RSFT_T(KC_DOT), LT(_LW,KC_ENT))          // Requires PR #8591
+
+// Left hand backspace, enter, delete
+COMB(del, KC_DEL, KC_R, KC_T)
+COMB(bspc, KC_BSPC, KC_F, KC_G)
+COMB(ent, KC_ENT, KC_V, KC_B)
+
+// Undo, Cut, Copy, Paste
+SUBS(undo,SS_LCTRL("z"), LSFT_Z, KC_X)
+SUBS(cut,SS_LCTRL("x"),KC_X, KC_C, KC_V)      // Requires PR #8591
+SUBS(copy,SS_LCTRL("c"), KC_X, KC_C)
+SUBS(paste,SS_LCTRL("v"), KC_C, KC_V)

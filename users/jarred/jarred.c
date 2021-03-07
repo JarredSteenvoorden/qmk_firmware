@@ -17,6 +17,31 @@
 #include "jarred.h"
 #include "version.h"
 
+#ifdef COMBO_ENABLE
+#include "keymap_combo.h"
+#endif
+
+bool navActive;
+
+uint32_t layer_state_set_user(uint32_t state) {
+  switch (get_highest_layer(state)) {
+    case _NV:
+      navActive = true;
+      break;
+    default:
+      // Release mods set in navigation layer
+      if (navActive) {
+        unregister_code(KC_LALT);
+        unregister_code(KC_LCTL);
+        unregister_code(KC_LSFT);
+        unregister_code(KC_LGUI);        
+      }
+      navActive = false;
+      break;
+    }
+  return state;
+}
+
 __attribute__ ((weak))
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
   return true;

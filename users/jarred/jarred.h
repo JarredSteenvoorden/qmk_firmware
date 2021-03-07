@@ -44,7 +44,9 @@ enum {
 };
 
 #define MS_A       LT(_MS,KC_A)
+#define NAV_A      LT(_NV,KC_A)
 
+#define LSFT_Z     LSFT_T(KC_Z)
 #define WIN_Z      LGUI_T(KC_Z)
 #define CTL_SLH    RCTL_T(KC_SLSH)
 
@@ -57,35 +59,43 @@ enum {
 /* Qwerty Layer */
 #define QWERTY_L1   KC_TAB,     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T
 #define QWERTY_L2   NAVI,       KC_A,    KC_S,    KC_D,    KC_F,    KC_G
-#define QWERTY_L3   KC_LSFT,   WIN_Z,    KC_X,    KC_C,    KC_V,    KC_B
+//#define QWERTY_L3   KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B
 #define QWERTY_L4   KC_LCTL, KC_LGUI,  NUMPAD, KC_LALT,   LOWER,  KC_SPC
+//#define QWERTY_L2   _______,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G
+#define QWERTY_L3   KC_LSFT,  LSFT_Z,    KC_X,    KC_C,    KC_V,    KC_B
+//#define QWERTY_L4   KC_LCTL, KC_LGUI,  NUMPAD, KC_LALT, _______,  KC_SPC
 
 #define QWERTY_R1                                                           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSPC
-#define QWERTY_R2                                                           KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT
-#define QWERTY_R3                                                           KC_N,    KC_M, KC_COMM,  KC_DOT, CTL_SLH, KC_RSFT
+//#define QWERTY_R2                                                           KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT
+//#define QWERTY_R3                                                           KC_N,    KC_M, KC_COMM,  KC_DOT, CTL_SLH, KC_RSFT
 #define QWERTY_R4                                                         KC_ENT,   RAISE, KC_RALT, MO(_MS),  KC_APP, KC_RCTL
+#define QWERTY_R2                                                           KC_H,    KC_J,    KC_K,    KC_L, KC_BSPC, _______
+#define QWERTY_R3                                                           KC_N,    KC_M, KC_COMM,  KC_DOT, KC_RSFT, KC_RSFT
+//#define QWERTY_R4                                                         KC_ENT, _______, KC_RALT, MO(_MS),  KC_APP, KC_RCTL
 
 #define QWERTY_4_DOX                           KC_LCTL,   LOWER,  KC_SPC, KC_ENT,   RAISE, KC_RALT
 
 /* Game Layer */
-#define GAME_L1   _______, _______, _______, _______, _______, _______
+#define GAME_L1   _______, KC_EXLM,  KC_AT,  KC_HASH,  KC_DLR, KC_PERC
 #define GAME_L2   _______, _______, _______, _______, _______, _______
 #define GAME_L3   _______, _______, _______, _______, _______, _______
-#define GAME_L4   _______, _______, KC_LALT,   LOWER,  KC_SPC,  KC_SPC
+#define GAME_L4   _______, _______, _______, _______, _______, _______
 
-#define GAME_R1                                                         _______, _______, _______, _______, _______, _______
-#define GAME_R2                                                         _______, _______, _______, _______, _______, _______
+#define GAME_R1                                                         KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, _______
+#define GAME_R2                                                         _______, _______, _______, KC_LCBR, KC_RCBR, _______
 #define GAME_R3                                                         _______, _______, _______, _______, _______, _______
 #define GAME_R4                                                         _______, _______, _______, _______, _______, _______
 
 /* Lower / Upper Layer */
 #define LOWER_L1   KC_ESC ,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5
 #define LOWER_L2   _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
+//#define LOWER_L3   _______,   KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10
 #define LOWER_L3   _______,   KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10
 #define LOWER_L4   _______, _______, _______, _______, _______, _______
 
 #define LOWER_R1                                                            KC_6,    KC_7,    KC_8,    KC_9,    KC_0, _______
-#define LOWER_R2                                                          KC_F11,  KC_MINS, KC_EQL, KC_LBRC, KC_RBRC, KC_BSLS
+//#define LOWER_R2                                                          KC_F11,  KC_MINS, KC_EQL, KC_LBRC, KC_RBRC, KC_BSLS
+#define LOWER_R2                                                          KC_F11, _______, _______, KC_LBRC, KC_RBRC, _______
 #define LOWER_R3                                                          KC_F12,  KC_GRV, _______, _______, _______, _______
 #define LOWER_R4                                                         _______, _______, _______, _______, _______, _______
 
@@ -96,9 +106,12 @@ enum {
 #define NAV_L2     _______, _______, _______, KC_LSFT, KC_LCTL,  KC_ENT
 #define NAV_L3     _______, _______, _______, _______, _______, _______
 #define NAV_L4     _______, _______, _______, CTL_TAB, ALT_TAB, _______
+//#define NAV_L4     _______, _______, _______, _______, CTL_TAB, ALT_TAB
 
-#define NAV_R1                                                           _______, KC_HOME, KC_UP  , KC_END ,  KC_INS, _______
-#define NAV_R2                                                           _______, KC_LEFT, KC_DOWN, KC_RGHT,  KC_DEL, _______
+//#define NAV_R1                                                           _______, KC_HOME, KC_UP  , KC_END ,  KC_INS, _______
+//#define NAV_R2                                                           _______, KC_LEFT, KC_DOWN, KC_RGHT,  KC_DEL, _______
+#define NAV_R1                                                           _______, KC_HOME, KC_UP  , KC_END ,  KC_DEL, _______
+#define NAV_R2                                                           _______, KC_LEFT, KC_DOWN, KC_RGHT, KC_BSPC, _______
 #define NAV_R3                                                           _______, KC_PGUP, KC_PGDN, _______, _______, _______
 #define NAV_R4                                                           _______,  KC_APP, _______, _______, _______, _______
 
