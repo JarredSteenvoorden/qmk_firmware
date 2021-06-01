@@ -44,9 +44,14 @@ enum {
 };
 
 #define MS_A       LT(_MS,KC_A)
+#define NAV_A      LT(_NV,KC_A)
 
+#define LSFT_Z     LSFT_T(KC_Z)
 #define WIN_Z      LGUI_T(KC_Z)
 #define CTL_SLH    RCTL_T(KC_SLSH)
+#define RSFT_SLH   RSFT_T(KC_SLSH)
+
+#define NUM_SPC      LT(_LW,KC_SPACE)
 
 // Wrappers
 #define LAYOUT_planck_grid_wrapper(...)      LAYOUT_planck_grid(__VA_ARGS__)

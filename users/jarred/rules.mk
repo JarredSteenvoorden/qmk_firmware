@@ -10,7 +10,9 @@ ifneq (,$(findstring planck,$(KEYBOARD)))
     BACKLIGHT_BREATHING = no
   endif
   
+  CONSOLE_ENABLE = no
   AUDIO_ENABLE = yes
 endif
 
+COMBO_ENABLE = yes
 MOUSEKEY_ENABLE = no

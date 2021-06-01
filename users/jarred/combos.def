@@ -1,0 +1,21 @@
+// Escape and Tab
+COMB(esc, KC_ESC, KC_W, KC_E)
+COMB(tab, KC_TAB, KC_S, KC_D)
+
+// Symbols
+COMB(mins, KC_MINS, KC_E, KC_R)
+COMB(eql, KC_EQL, KC_D, KC_F)
+COMB(quot, KC_QUOT, KC_K, KC_L)
+COMB(scln, KC_SCLN, KC_J, KC_K)
+COMB(slsh, KC_SLSH, KC_I, KC_O)
+COMB(bsls, KC_BSLS, KC_U, KC_I)
+
+// One shot CTRL, ALT, GUI
+COMB(osm_lctrl, OSM(MOD_LCTL), KC_S, KC_F)    // Requires PR #8591
+COMB(osm_rctrl, OSM(MOD_RCTL), KC_J, KC_L)    // Requires PR #8591
+COMB(osm_ralt, OSM(MOD_RALT), KC_U, KC_O)     // Requires PR #8591
+
+// Cut, Copy, Paste
+SUBS(cut,SS_LCTRL("x"),KC_X, KC_C, KC_V)      // Requires PR #8591
+SUBS(copy,SS_LCTRL("c"), KC_X, KC_C)
+SUBS(paste,SS_LCTRL("v"), KC_C, KC_V)

@@ -35,17 +35,28 @@
 #define MOUSEKEY_WHEEL_TIME_TO_MAX  255
 #define MOUSEKEY_WHEEL_DELAY        0
 
-#undef TAPPING_TOGGLE
-#undef TAPPING_TERM
-#undef IGNORE_MOD_TAP_INTERRUPT
-
-#define PERMISSIVE_HOLD
-#define TAPPING_TOGGLE  1
-#define TAPPING_TERM    200
-#define IGNORE_MOD_TAP_INTERRUPT
-
 #ifdef AUDIO_ENABLE
     #define STARTUP_SONG SONG(PLANCK_SOUND)
 #endif
 
 #define MACRO_TIMER 5
+
+
+#ifdef COMBO_ENABLE
+#    define COMBO_VARIABLE_LEN
+#    define COMBO_TERM 30
+#endif
+
+#define ONESHOT_TIMEOUT 1000
+
+#undef TAPPING_TERM
+#undef PERMISSIVE_HOLD
+#undef IGNORE_MOD_TAP_INTERRUPT
+#undef TAPPING_FORCE_HOLD
+#undef RETRO_TAPPING
+
+#define TAPPING_TERM        200
+//#define TAPPING_TERM_FAST   100     // Use faster tapping on space bar
+//#define TAPPING_TERM_PER_KEY
+//#define TAPPING_FORCE_HOLD          // Fix rapid alternating Layer Tap. Space cannot be held
+//#define RETRO_TAPPING               // Since tapping on space is low, this will still register a key if no mod is used
