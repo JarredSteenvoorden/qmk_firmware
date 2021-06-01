@@ -7,10 +7,12 @@ COMB(mins, KC_MINS, KC_E, KC_R)
 COMB(eql, KC_EQL, KC_D, KC_F)
 COMB(quot, KC_QUOT, KC_K, KC_L)
 COMB(scln, KC_SCLN, KC_J, KC_K)
-COMB(slsh, KC_SLSH, KC_I, KC_O)
+// COMB(slsh, KC_SLSH, KC_I, KC_O)
+COMB(enter, KC_ENT, KC_I, KC_O)
 COMB(bsls, KC_BSLS, KC_U, KC_I)
 
 // One shot CTRL, ALT, GUI
+COMB(osm_lgui, OSM(MOD_LGUI), KC_W, KC_R)     // Requires PR #8591
 COMB(osm_lctrl, OSM(MOD_LCTL), KC_S, KC_F)    // Requires PR #8591
 COMB(osm_rctrl, OSM(MOD_RCTL), KC_J, KC_L)    // Requires PR #8591
 COMB(osm_ralt, OSM(MOD_RALT), KC_U, KC_O)     // Requires PR #8591
