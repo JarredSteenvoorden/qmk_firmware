@@ -60,4 +60,5 @@
 //#define TAPPING_TERM_PER_KEY
 #define TAPPING_FORCE_HOLD          // Fix rapid alternating Layer Tap. Space cannot be held
 //#define RETRO_TAPPING               // Since tapping on space is low, this will still register a key if no mod is used
+//#define PERMISSIVE_HOLD
 //#define IGNORE_MOD_TAP_INTERRUPT

@@ -8,10 +8,11 @@ COMB(enter_nav, KC_ENT, KC_LEFT, KC_UP)
 COMB(bspace, KC_BSPC, KC_I, KC_O)
 COMB(bspace_nav, KC_BSPC, KC_UP, KC_END)
 
-COMB(delete, KC_DEL, KC_8, KC_9)
+COMB(delete, KC_DEL, KC_K, KC_L)
+COMB(delete_nav, KC_DEL, KC_DOWN, KC_RGHT)
 
 // Symbols
-COMB(slsh, KC_SLSH, KC_K, KC_L)
+COMB(slsh, KC_SLSH, KC_COMM, KC_DOT)
 
 //COMB(quot, KC_QUOT, KC_I, KC_O)
 //COMB(mins, KC_MINS, KC_E, KC_R)
