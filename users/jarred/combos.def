@@ -1,15 +1,16 @@
-// Escape and Tab
+// Escape, Tab, Enter
 COMB(esc, KC_ESC, KC_W, KC_E)
-COMB(tab, KC_TAB, KC_S, KC_D)
+COMB(tab, KC_TAB, KC_E, KC_F)
+COMB(enter, KC_ENT, KC_J, KC_I)
 
 // Symbols
-COMB(mins, KC_MINS, KC_E, KC_R)
-COMB(eql, KC_EQL, KC_D, KC_F)
-COMB(quot, KC_QUOT, KC_K, KC_L)
-COMB(scln, KC_SCLN, KC_J, KC_K)
-// COMB(slsh, KC_SLSH, KC_I, KC_O)
-COMB(enter, KC_ENT, KC_I, KC_O)
-COMB(bsls, KC_BSLS, KC_U, KC_I)
+COMB(quot, KC_QUOT, KC_I, KC_O)
+COMB(slsh, KC_SLSH, KC_K, KC_L)
+
+//COMB(mins, KC_MINS, KC_E, KC_R)
+//COMB(eql, KC_EQL, KC_D, KC_F)
+//COMB(scln, KC_SCLN, KC_J, KC_K)
+//COMB(bsls, KC_BSLS, KC_U, KC_I)
 
 // One shot CTRL, ALT, GUI
 COMB(osm_lgui, OSM(MOD_LGUI), KC_W, KC_R)     // Requires PR #8591

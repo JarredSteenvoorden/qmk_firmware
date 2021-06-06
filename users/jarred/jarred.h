@@ -48,8 +48,10 @@ enum {
 
 #define LSFT_Z     LSFT_T(KC_Z)
 #define WIN_Z      LGUI_T(KC_Z)
+
 #define CTL_SLH    RCTL_T(KC_SLSH)
 #define RSF_SLH    RSFT_T(KC_SLSH)
+#define RSF_ENT    RSFT_T(KC_ENT)
 
 #define NUM_SPC    LT(_LW,KC_SPACE)
 

@@ -44,7 +44,7 @@
 
 #ifdef COMBO_ENABLE
 #    define COMBO_VARIABLE_LEN
-#    define COMBO_TERM 30
+#    define COMBO_TERM 35
 #endif
 
 #define ONESHOT_TIMEOUT 1000
@@ -58,5 +58,6 @@
 #define TAPPING_TERM        200
 //#define TAPPING_TERM_FAST   100     // Use faster tapping on space bar
 //#define TAPPING_TERM_PER_KEY
-//#define TAPPING_FORCE_HOLD          // Fix rapid alternating Layer Tap. Space cannot be held
+#define TAPPING_FORCE_HOLD          // Fix rapid alternating Layer Tap. Space cannot be held
 //#define RETRO_TAPPING               // Since tapping on space is low, this will still register a key if no mod is used
+//#define IGNORE_MOD_TAP_INTERRUPT
