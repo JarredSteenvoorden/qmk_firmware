@@ -44,7 +44,7 @@
 
 #ifdef COMBO_ENABLE
 #    define COMBO_VARIABLE_LEN
-#    define COMBO_TERM 35
+#    define COMBO_TERM 30
 #endif
 
 #define ONESHOT_TIMEOUT 1000

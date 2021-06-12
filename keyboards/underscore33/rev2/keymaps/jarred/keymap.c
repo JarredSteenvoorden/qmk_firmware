@@ -25,15 +25,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LW] = LAYOUT_33_big_space(
     KC_1   , KC_2   , KC_3   , KC_4   , KC_5   , KC_6   , KC_7   , KC_8   , KC_9   , KC_0   ,
-    KC_F7  , KC_F8  , KC_F9  , KC_F10 , TD_F11 , KC_SCLN, KC_MINS, KC_EQL , KC_LBRC, KC_RBRC,
-    KC_LSFT, TD_F2  , KC_F3  , KC_F4  , KC_F5  , KC_F6  , KC_BSLS, KC_GRV , _______, KC_RSFT,
+    _______, TD_F2  , KC_F3  , KC_F4  , KC_F5  , KC_SCLN, KC_MINS, KC_EQL , KC_LBRC, KC_RBRC,
+    KC_LSFT, KC_F6  , KC_F8  , KC_F9  , KC_F10 , TD_F11 , KC_BSLS, KC_GRV , _______, KC_RSFT,
              RESET  ,                        _______,                       _______
   ),
 
   [_NV] = LAYOUT_33_big_space(
     _______, _______, KC_LGUI,  KC_DEL, KC_BSPC, _______, KC_HOME, KC_UP  , KC_END , KC_BSPC,
     _______, _______, KC_LSFT, KC_LCTL,  KC_ENT, _______, KC_LEFT, KC_DOWN, KC_RGHT,  KC_DEL,
-    _______, _______, CTL_TAB, ALT_TAB, _______, _______, KC_PGUP, KC_PGDN, KC_INS , _______,
+    _______, _______, _______, CTL_TAB, ALT_TAB, _______, KC_PGUP, KC_PGDN, KC_INS , _______,
              _______,                        _______,                       _______
   ),
 };
