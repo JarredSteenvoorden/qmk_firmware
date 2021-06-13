@@ -55,3 +55,5 @@ BACKLIGHT_ENABLE ?= no  # Enable keyboard backlight functionality
 AUDIO_ENABLE ?= no
 RGBLIGHT_ENABLE ?= no
 OLED_DRIVER_ENABLE = yes
+
+BOOTLOADER = caterina
